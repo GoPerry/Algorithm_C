@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+
 typedef struct  BiNode {
 
     int data;
