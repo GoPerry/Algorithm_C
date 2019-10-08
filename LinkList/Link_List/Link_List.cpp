@@ -144,6 +144,7 @@ int main()
 
 	traverse(head);
 	find_last(head);
+	isEmpty(head);
 
 	//val = (ELEMENT_TYPE)head->Data;
 	
