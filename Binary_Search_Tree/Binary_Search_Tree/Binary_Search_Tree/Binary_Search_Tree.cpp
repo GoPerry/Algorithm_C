@@ -64,6 +64,7 @@ node find_Max(node Bitree)
 		return NULL;
 	} 
 	else if(Bitree->right == NULL){
+		printf("the max data is =%d\n", Bitree->data);
 		return Bitree;
 	}else{
 		return find_Max(Bitree->right);
@@ -95,24 +96,29 @@ node create_node(ELEMENT_TYPE X)
 }
 node insert(node Bitree,ELEMENT_TYPE X)
 {
-	node temp;
-	 
 	
-	if (!Bitree)
+	if (Bitree == NULL)
 	{
-		temp = (node)malloc(sizeof(struct TreeNode));
-		temp->data = X;
-		temp->left = temp->right = NULL;
+	//	temp = (node)malloc(sizeof(struct TreeNode));
+	///	temp->data = X;
+	//	temp->left = temp->right = NULL;
+		Bitree=create_node(X);
 	}
 	else
 	{
 		if (X < Bitree->data)
 		{
-			insert(Bitree->left, X);
+			printf("insert to left\n");
+			Bitree->left=insert(Bitree->left, X);
 		}
 		else if(X > Bitree->data)
 		{
-			insert(Bitree->right,X);	
+			printf("insert to right\n");
+			Bitree->right = insert(Bitree->right,X);	
+		}
+		else
+		{
+			printf("X=%d node inserted \n",X);
 		}
 	}
 	return Bitree;
@@ -178,12 +184,30 @@ int maxDepth(TreeNode root)
 
 int main()
 {
-	node root=NULL;
-	root = create_node(1);
-	root = insert(root,2);
-	root = insert(root,3);
-	root=  insert(root, 4);
-	Preorder_Traversal(root);
+	node curroot =NULL;
+	int i,num;
+	
+	//root = create_node(1);
+#if 0
+	for (i = 0; i < 10; i++) {
+		printf("please input num to the tree:");
+		scanf_s("%c", &num);
+		insert(root, num);
+	}
+#endif // 0
+
+	curroot = insert(curroot, 1);
+	curroot = insert(curroot, 2);
+	curroot = insert(curroot, 3);
+	curroot = insert(curroot, 4);
+
+
+	Preorder_Traversal(curroot);
+	find_Max(curroot);
+	curroot = Delete(curroot,4);
+	curroot = Delete(curroot, 3);
+	curroot = find_Max(curroot);
+	curroot=find_Max1(curroot);
 
     return 0;
 }
