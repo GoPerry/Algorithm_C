@@ -1,0 +1,4 @@
+﻿  StackSample1.cpp
+d:\source codes\algorithm_c\stack\stack_sample1\stacksample1\stacksample1\stacksample1.cpp(63): warning C4715: 'Push': not all control paths return a value
+  StackSample1.vcxproj -> D:\Source Codes\Algorithm_C\Stack\Stack_sample1\StackSample1\Debug\StackSample1.exe
+  StackSample1.vcxproj -> D:\Source Codes\Algorithm_C\Stack\Stack_sample1\StackSample1\Debug\StackSample1.pdb (Full PDB)
